@@ -1,0 +1,354 @@
+Q:Max of three
+
+Problem Description:
+Write a program to input three numbers(A, B & C) from user and print the maximum element among A, B & C in each line.
+
+Input Format
+First line is a single integer A.
+Second line is a single integer B.
+Third line is a single integer C.
+
+
+SOL:
+
+def main():
+
+    a,b,c=(map(int,input().split()))
+    print(max(a,b,c))
+
+    
+
+    return 0
+
+if __name__ == '__main__':
+    main()
+    
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q: Divisible by 2 numbers
+
+Problem Description:
+You are given an integer A. You have to tell whether A is divible by both 5 and 11 or not.
+
+Input Format:
+The input contains a single integer A.
+
+Output Format:
+Print 1 if A is divisible by both 5 and 11, else print 0.
+
+
+SOL:
+
+def main():
+
+    A=int(input()) 
+    if A%5==0 and A%11==0:
+        print(1)
+    else:
+        print(0)
+
+
+    return 0
+
+if __name__ == '__main__':
+    main()
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q. Check even/odd
+
+Problem Description:
+Write a program to input an integer from user and print 1 if it is odd otherwise print 0.
+
+Input Format
+One line containing an integer N.
+
+Output Format
+Print either 1 or 0 as per the question.
+
+
+
+SOL:
+
+def main():
+
+    n=int(input()) 
+    if n % 2 == 0:
+        print(0)
+    else:
+        print(1)
+    return 0
+
+if __name__ == '__main__':
+    main()
+    
+    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q. Electricity Bill
+
+Problem Description:
+Given an integer A denoting the amount of units of electricity consumed, you have to calculate the electricity bill (in Rs.) with the help of the below 
+charge conditions:
+
+For first 50 units Rs. 0.50/unit
+For next 100 units Rs. 0.75/unit
+For next 100 units Rs. 1.20/unit
+For unit above 250 Rs. 1.50/unit
+An additional surcharge of 20% is added to the bill.
+
+NOTE: As the electricity bill can have any real value (floating point), you have to tell the floor value of the bill.
+
+Floor value of a floating point is the closest integer less than or equal to that value. For eg, Floor value of 2.91 is 2.
+
+
+
+Input Format
+First line of the input contains a single integer A.
+
+Output Format
+Return an integer denoting the floor value of the Electricity bill.
+
+
+
+SOL:
+
+import math
+def bill(A):
+    ans = None
+    # YOUR CODE GOES HERE
+    c=0
+    if A < 50:
+        ans = A*0.50 
+    elif A < 150:
+        c=A-50
+        ans = (c * .75)+(25)
+    elif A < 250:
+        c = A-150
+        ans= (c*1.2)+(100*.75)+(50*.5)
+    else:
+        
+        c= A-250
+        ans=(c*1.50)+(100*1.2)+(100*.75)+(50*.5)
+    
+    print(math.floor(ans + (ans*.2)))
+    return 0
+    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+    
+Q. Min of three
+
+Problem Description:
+Write a program to input three numbers(A, B & C) from user and print the minimum element among A, B & C in each line.
+
+Input Format
+First line is a single integer A.
+Second line is a single integer B.
+Third line is a single integer C.
+
+
+
+Output Format
+One line containing an integer as per the question.
+
+
+
+SOL:
+
+def main():
+
+    a,b,c=(map(int,input().split()))
+    print(min(a,b,c))
+
+    return 0
+
+if __name__ == '__main__':
+    main()
+    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+Q. Bank Account
+
+
+Problem Description:
+You are given a Bank account having N amount and you are asked to perform ADD(credit) or SUBTRACT(debit) operation of an amount X.
+After the operation print the amount left in the Bank account. If the debit amount is greater than current balance print "Insufficient Funds"(without quotes) and the operation is skipped.
+
+
+
+Problem Constraints
+1 <= N, X <= 105
+
+
+Input Format
+First line contains a single integer N denoting the balance in bank account.
+
+Next line contains two space separated integers Type and Amount(X).
+
+If Type == 1, Perform ADD operation.
+If Type == 2, Perform SUBTRACT operation.
+
+
+Output Format
+Print Amount in the bank balance after the operation.
+
+
+
+SOL:
+
+def main():
+
+    N=int(input())
+    M=int(input())
+    for i in range(M):
+        l=[int(j)for j in (input().split())]
+        
+        if l[0]==1:
+            N=N+l[1]
+            print(N)
+        elif (l[0]==2) and (N-l[1]<0):
+            print('Insufficient Funds')
+        elif (l[0]==2) and (N-l[1]>=0):
+            N=N-l[1]
+            print(N)
+    return 0
+
+if __name__ == '__main__':
+    main()
+    
+    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q. Sum the digits
+
+Problem Description:
+Mr. Q has a diary in which a lot of numbers are written. He wants to know the sum of digits for every number. Ask Mr. Q about the total numbers written in the diary and then write a code to find the sum of digits for every number.
+Note : Total different Numbers are T and for every number (let's say N) you need to find Sum of digits.
+
+
+
+Problem Constraints
+
+1 <= T <= 1000
+0 <= N <= 100000000
+
+
+
+Input Format
+First line is T which means count of numbers
+Each next T lines contain an integer N.
+
+
+
+Output Format
+T lines each containing one integer representing sum of the digits of the input integer.
+
+
+
+SOL:
+
+def main():
+
+    t=int(input())
+    while (t!=0):
+        n=int(input())
+        
+        s=0
+        while (n!=0):
+            d=n%10
+            s+=d
+            n=n//10
+        print(s)
+        t-=1
+    
+    return 0
+
+if __name__ == '__main__':
+    main()
+    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q. Sum of evens!
+
+Problem Description
+You are given an integer A, you need to find and return the sum of all the even numbers between 1 and A.
+Even numbers are those numbers that are divisible by 2.
+
+Problem Constraints
+1 <= N <= 500
+
+Input Format
+First and only argument is an integer A.
+
+Output Format
+Return an integer denoting the sum of even numbers between [1, A] (both inclusive).
+
+
+
+SOL:
+
+class Solution:
+    # @param A : integer
+    # @return an integer
+    def solve(self, A):  
+        even=0
+        for i in range(1,A+1):
+            if (i%2==0):
+                even=even+i
+                    
+        return(even)
+      
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Q4. Multiplication Table
+
+Problem Description
+Write a program to print the multiplication table of the number entered by the user, N.
+The table for input N = 5 should get displayed in the following form:
+
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50
+
+
+Problem Constraints
+1 <= N <= 100
+
+Input Format
+First and only line of input contains an integer N.
+
+Output Format
+Output the Multiplication Table in the given form.
+
+
+SOL:
+
+def main():
+    n=int(input())
+    for i in range(1,10+1):
+        print(n,"*",i,"=", n*i)
+    return 0
+
+if __name__ == '__main__':
+    main()
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
