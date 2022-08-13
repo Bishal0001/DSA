@@ -352,5 +352,665 @@ if __name__ == '__main__':
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Q10. Count the digits
+
+Problem Description
+
+Mr Q has a diary in which he has written a lot of numbers. He is confused with the number of digits in every number. Ask Mr Q about the total different
+numbers written in the diary and then write a code to find the number of digits in every number.
+
+Note: Total different Numbers are T and for every number (let's say N) you need to find the total number of digits.
+
+
+Problem Constraints
+
+1 <= T <= 100
+0 <= N <= 100000000
+
+
+
+Input Format
+
+The first line is T which means the total number written in the diary.
+Next T lines contain an integer N.
+
+
+
+Output Format
+
+For T different Numbers, Print the number of digits in T in different lines.
+
+
+Example Input
+
+Input 1:
+
+2
+0
+1
+Input 2:
+
+2
+100
+10101
+
+
+Example Output
+
+Output 1:
+
+1
+1
+Output 2:
+
+3
+5
+
+
+
+
+SOL:
+
+def main():
+
+    tc=int(input())
+    while tc>0:
+        tc-=1
+        n=int(input())
+        count=0
+        if n==0:
+            count=1
+        while n>0:
+            count+=1
+            n=n//10
+        print(count)
+    return 0
+
+if __name__ == '__main__':
+    main()
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Q11. Reverse Game
+
+Problem Description
+
+Write a program to input T numbers(N) from user and find reverse of the given number.
+
+
+
+Problem Constraints
+
+1 <= T <= 100
+
+1 <= N <= 100000000
+
+
+
+Input Format
+
+First line is T which means number of test cases.
+
+Each next N lines contain an integer N.
+
+
+
+Output Format
+
+T lines each containing reverse of the input integer.
+
+
+
+Example Input
+
+Input 1:
+
+2
+101
+105
+Input 2:
+
+ 
+1
+100
+
+
+Example Output
+
+Output 1:
+
+101
+501
+Output 2:
+
+1
+
+
+
+
+SOL:
+
+def main():
+
+    t=int(input())
+    while t>0:
+        t-=1
+        n=int(input())
+        a=int(0)
+        while n>0:
+            a=(a*10)+(n%10)
+            n=n//10
+        print(a)
+    return 0
+
+if __name__ == '__main__':
+    main()
+    
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Q12. Print the Primes!
+
+Problem Description
+
+You are given an integer N you need to print all the Prime Numbers between 1 and N.
+
+Prime numbers are numbers that have only 2 factors: 1 and themselves. For example, the first 5 prime numbers are 2, 3, 5, 7, and 11.
+
+
+
+Problem Constraints
+
+1 <= N <= 300
+
+
+
+Input Format
+
+First and only line of input contains a single integer N.
+
+
+
+Output Format
+
+Print all the prime numbers between between 1 and N each in a new line.
+
+
+
+Example Input
+
+Input 1:
+
+ 5
+Input 2:
+
+ 10
+
+
+Example Output
+
+Output 1:
+
+ 2
+ 3
+ 5
+Output 2:
+
+ 2
+ 3
+ 5
+ 7
+ 
+ 
+ SOL:
+ 
+ def main():
+
+    n=int(input()) 
+  
+    for i in range (2,n + 1):  
+        c=0
+        for j in range (2, i//+1):  
+        
+            if (i % j == 0):  
+                c+=1
+        if (c<=0):
+            print(i)
+
+           
+    return 0
+
+if __name__ == '__main__':
+    main()
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Q13. Palindromic Integer
+Solved
+character backgroundcharacter
+Stuck somewhere?
+Ask for help from a TA and get it resolved.
+Get help from TA.
+Problem Description
+
+Given an integer A, determine whether it is palindromic or not.
+
+A palindrome integer is an integer X for which reverse(X) = X where reverse(X) is X with its digits reversed. For e.g., reverse(123) = 321.
+
+
+
+Problem Constraints
+
+1 <= A <= 106
+
+
+
+Input Format
+
+First and the only line contains a single integer A.
+
+
+
+Output Format
+
+Print Yes if it is palindromic, else print No.
+
+
+
+Example Input
+
+Input 1:
+
+ 120 
+Input 2:
+
+ 1001 
+Input 3:
+
+ 131 
+
+
+Example Output
+
+Output 1:
+
+ No 
+Output 2:
+
+ Yes 
+Output 3:
+
+ Yes 
+ 
+ 
+ SOL:
+ 
+ def main():
+    n=(int(input()))
+    a=n
+    r=0
+    while n!=0:
+        v=n%10
+        n=n//10
+        r=r*10+v
+        b=r
+    if (a==b):
+        print('Yes')
+    else:
+        
+        print('No')
+
+
+    return 0
+
+if __name__ == '__main__':
+    main()
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q14. Easy Power
+
+Problem Description
+
+You are given two integers A and B. You have to find the value of AB.
+
+NOTE: The value of answer is always less than or equal to 109.
+
+
+
+Problem Constraints
+
+1 <= A, B <= 1000
+
+
+
+Input Format
+
+First line of the input contains a single integer A.
+
+Second line of the input contains a single integer B.
+
+
+
+Output Format
+
+Print a single integer in single line.
+
+
+
+Example Input
+
+Input 1:
+
+ 2
+ 3 
+Input 2:
+
+ 1
+ 10 
+
+
+Example Output
+
+Output 1:
+
+ 8 
+Output 2:
+
+ 1 
+    
+    
+    
+ SOL:
+ 
+ def main():
+
+    a=int(input())
+    b=int(input())
+    c=a**b
+    print(c)
+    return 0
+
+if __name__ == '__main__':
+    main()
+    
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q15. Number of days?
+
+Problem Description
+
+Given a month number, A and an year, B, return the number of days in that month (take leap years into account).
+
+
+Problem Constraints
+
+1 <= A <= 12
+
+1 <= B <= 109
+
+
+
+Input Format
+
+First argument is an integer A denoting the month number.
+
+Second argument is an intege B denoting the year.
+
+
+
+Output Format
+
+Return an integer denoting the count of days in the given month.
+
+
+
+Example Input
+
+Input 1:
+
+ A = 2
+ B = 2020
+Input 2:
+
+ A = 10
+ B = 1999
+
+
+Example Output
+
+Output 1:
+
+ 29
+Output 2:
+
+ 31
+
+
+Example Explanation
+
+Explanation 1:
+
+ 2020 is a leap year and month is February. So number of days are 29.
+Explanation 2:
+
+ There are 31 days in month of october.
+
+
+
+Sol:
+
+class Solution:
+
+    def solve(self, A, B):
+        
+        if A in (1,4,3,6,8,9,11):
+            return 30
+        elif A in (7,5,10,12):
+            return 31
+        elif A==2:
+            if (B % 4 == 0) and ( ( B % 100 !=0 ) or ( B % 400 == 0)):
+                return 29
+            else:
+                return 28
+        else:
+            return 28
+
+            
+        print()
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Q16. Vowel Or Consonant
+
+Problem Description
+
+You are given a lowercase latin alphabetic character C. You have to tell whether it is a vowel or not.
+
+The characters 'a', 'e', 'i', 'o', and 'u' are called vowels.
+
+
+
+Problem Constraints
+
+C ∈ ['a' - 'z']
+
+
+
+Input Format
+
+The input consists of a single character C.
+
+
+
+Output Format
+
+Return 1 if the given character is a vowel, else return 0.
+
+
+
+Example Input
+
+Input 1:
+
+ a 
+Input 2:
+
+ b 
+
+
+Example Output
+
+Output 1:
+
+ 1 
+Output 2:
+
+ 0 
+
+
+Example Explanation
+
+Explanation 1:
+
+ 'a' is a vowel.
+Explanation 2:
+
+ 'b' is a consonant (not a vowel).
+ 
+ 
+ 
+ SOL:
+ 
+ def isvowel(C):
+    if (C=='a' or C== 'e' or C=='i' or C=='o' or C=='u' or  C=='A' or C=='E' or C=='I' or C=='O' or C=='U'):
+        return 1
+    
+    else:
+        return 0
+    
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q17. Percentage and Grade
+
+Problem Description:
+
+Write a program to calculate the percentage (according to marks of a student) and grade (according to the percentage of a student). Five numbers(A, B, C, D & E) represent the marks of a student in 5 subjects which are out of 100. Print the percentage and the grade of the student.
+
+If percentage >= 90% : Grade A
+If percentage >= 80% but <90 : Grade B
+If percentage >= 70% but <80: Grade C
+If percentage >= 60% but <70: Grade D
+If percentage >= 40% but <60: Grade E
+If percentage < 40%: Grade F
+NOTE: You have to take the lowest integer of the percentage. E.g. 90.8% will be treated as 90%.
+
+Input Format:
+
+There will be five lines of inputs as following:
+
+The five lines contain the 5 subject marks of the student in numerical format.
+Output Format:
+
+The first line indicates the percentage in integer format.  
+
+The next line displays the grade in string format.
+Sample Input:
+
+50   
+60   
+70   
+80   
+90
+Sample Output:
+
+70   
+C  
+
+
+
+SOL:
+
+def main():
+
+    a,b,c,d,e=(map(int,input().split()))
+    percentage=((a+b+c+d+e)/5)
+    if percentage >= 90: 
+        print(int(percentage),'A')
+    elif percentage >= 80:
+        print(int(percentage),'B')
+    elif percentage >= 70: 
+        print(int(percentage),'C')
+    elif percentage >= 60: 
+        print(int(percentage),'D')
+    elif percentage >= 40: 
+        print(int(percentage),'E')
+    elif percentage < 40: 
+        print(int(percentage),'F')
+        
+    
+    return 0
+
+if __name__ == '__main__':
+    main()
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
