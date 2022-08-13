@@ -1,4 +1,4 @@
-Q:Max of three
+Q1:Max of three
 
 Problem Description:
 Write a program to input three numbers(A, B & C) from user and print the maximum element among A, B & C in each line.
@@ -26,7 +26,7 @@ if __name__ == '__main__':
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Q: Divisible by 2 numbers
+Q2: Divisible by 2 numbers
 
 Problem Description:
 You are given an integer A. You have to tell whether A is divible by both 5 and 11 or not.
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     main()
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-Q. Check even/odd
+Q3. Check even/odd
 
 Problem Description:
 Write a program to input an integer from user and print 1 if it is odd otherwise print 0.
@@ -86,7 +86,7 @@ if __name__ == '__main__':
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Q. Electricity Bill
+Q4. Electricity Bill
 
 Problem Description:
 Given an integer A denoting the amount of units of electricity consumed, you have to calculate the electricity bill (in Rs.) with the help of the below 
@@ -139,7 +139,7 @@ def bill(A):
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
   
     
-Q. Min of three
+Q5. Min of three
 
 Problem Description:
 Write a program to input three numbers(A, B & C) from user and print the minimum element among A, B & C in each line.
@@ -171,7 +171,7 @@ if __name__ == '__main__':
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
     
-Q. Bank Account
+Q6. Bank Account
 
 
 Problem Description:
@@ -225,7 +225,7 @@ if __name__ == '__main__':
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Q. Sum the digits
+Q7. Sum the digits
 
 Problem Description:
 Mr. Q has a diary in which a lot of numbers are written. He wants to know the sum of digits for every number. Ask Mr. Q about the total numbers written 
@@ -276,7 +276,7 @@ if __name__ == '__main__':
 -----------------------------------------------------------------------------------------------------------------------------------------------------------    
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Q. Sum of evens!
+Q8. Sum of evens!
 
 Problem Description
 You are given an integer A, you need to find and return the sum of all the even numbers between 1 and A.
@@ -310,7 +310,7 @@ class Solution:
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Q4. Multiplication Table
+Q9. Multiplication Table
 
 Problem Description
 Write a program to print the multiplication table of the number entered by the user, N.
