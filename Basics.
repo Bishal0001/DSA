@@ -1878,32 +1878,405 @@ class Solution:
         
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
+Q32. Reverse string - II
+
+Problem Description
+Write a program to reverse the words present in a string. Everything else should be preserved.
+Check example input/output. Note: There are no punctuation and special characters in the string.
+The string will only contain alphanumeric characters and spaces.
+
+
+Example Input
+Everyone loves data science
+
+
+Example Output
+enoyrevE sevol atad ecneics
+
+
+
+Sol:
+def main():
+
+    a=input()
+    a=a[::-1]
+    a=" ".join(a.split()[::-1])
+    print(a)
+if __name__ == '__main__':
+    main()
+
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Q33. Trim From Ends
+
+Problem Description
+
+You are given a character string A. You to trim(remove) both leading and trailing asterisk characters('*') in the string and return the resultant string.
+
+
+
+Problem Constraints
+
+1 <= |A| <= 105
+
+A[i] ∈ ['a'-'z', '*']
+
+
+
+Input Format
+
+First and only argument is a character string A.
+
+
+
+Output Format
+
+Return a character string denoting the resultant string after trimming.
+
+
+
+Example Input
+
+Input 1:
+
+A = "**h*e*l*lo*"
+Input 2:
+
+A = "noasteriskhere"
+
+
+Example Output
+
+Output 1:
+
+h*e*l*l*o
+Output 2:
+
+noasteriskhere
+
+
+
+Sol:
+class Solution:
+
+    def solve(self, A):
+        return(A.strip('*'))
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Q33. Reverse the word - II
+
+Problem Description
+You are given lowercase string (A) and you have to return after reversing that.
+
+
+
+Problem Constraints
+1 <= S.size() <= 1000
+
+
+
+Input Format
+First and only argument containing a lowercase string S.
+
+
+
+Output Format
+You have to return string which is reverse form of input string.
+
+
+
+Example Input
+Input 1:
+
+interviewbit
+Input 2:
+
+scaler
+
+
+Example Output
+Output 1:
+
+tibweivretni
+Output 2:
+
+relacs
+
+
+
+Sol:
+class Solution:
+
+    def solve(self, A):
+        o=A[::-1]
+        return o
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Q34. First Occurrence Of Word
+
+Problem Description
+
+You are given two character strings A and B.
+
+You have to find the first occurrence of string B in string A, as a substring, and return the starting position of first occurrence.
+
+A substring is a contiguous sequence of characters within a string. For e.g "at" is a substring in "catalogue".
+
+
+
+Problem Constraints
+
+1 <= |A|, |B| <= 1000
+
+A[i], B[i] ∈ ['a'-'z']
+
+
+
+Input Format
+
+First argument is a character string A.
+
+Second argument is a character string B.
+
+
+
+Output Format
+
+Return an integer denoting the starting position of first occurrence, or return -1 to report that there is no such occurrence.
+
+
+
+Example Input
+
+Input 1:
+
+ A = "aabababaa"
+ B = "ba" 
+Input 2:
+
+ A = "abc"
+ B = "ac" 
+
+
+Example Output
+
+Output 1:
+
+ 3 
+Output 2:
+
+ -1 
+ 
+ 
+ 
+ 
+ Sol:
+ class Solution:
+
+    def solve(self, A, B):
+        c=1+A.find(B)
+        if c==0:
+
+            return -1
+        
+        else:
+            return c
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Q35. Vowels vs Consonants - II
+
+Problem Description
+You are given lowercase string (A) and you have to tell count of vowels and consonants in it.
+
+
+
+Problem Constraints
+1 <= S.size() <= 1000
+
+
+
+Input Format
+First and only argument containing a lowercase string S.
+
+
+
+Output Format
+You have to return an array of two elements representing count of vowels and consonants in input string respectively.
+
+
+
+Example Input
+Input 1:
+
+interviewbit
+Input 2:
+
+scaler
+
+
+Example Output
+Output 1:
+
+[5 7]
+Output 2:
+
+[2 4]
+
+
+
+Sol:
+class Solution:
+
+    def solve(self, A):
+        v='aeiouAEIOU'
+        b=0
+        c=0
+        for i in A:
+            if i in v:
+                b+=1
+            else:
+                c+=1
+        return(b,c)
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Q36.Length of String - II
+
+Problem Description
+You have a string (A).
+
+You have to return length of input string.
+
+
+
+Problem Constraints
+1 <= A.size() <= 1000
+
+
+
+Input Format
+First and only argument containing a lowercase string A.
+
+
+
+Output Format
+You have to return an integer as per the question.
+
+
+
+Example Input
+Input 1:
+
+scaler
+Input 2:
+
+interviewbit
+
+
+Example Output
+Output 1:
+
+6
+Output 2:
+
+12
+
+
+
+Sol:
+class Solution:
+
+    def solve(self, A):
+        b=(len(A))
+        return(b)
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Q37.Is is Palindrome?
 
+Problem Description
+
+Write a program to input T strings (S) from user and print 1 if it is palindrome otherwise print 0. NOTE:A string is palindrome if it reads the same from backward as from forward.
+
+
+
+Problem Constraints
+
+1 <= T <= 100
+
+1 <= S.size() <= 1000
+
+
+
+Input Format
+
+First line is T which means number of test cases.
+
+Each next T lines contain a string S.
+
+
+
+Output Format
+
+T lines each containing either 0 or 1.
+
+
+
+Example Input
+
+Input 1:
+
+3
+abcba
+axax
+abba
+
+
+Example Output
+
+Output 1:
+
+1
+0
+1
+
+
+
+
+Sol:
+def main():
+    t=int(input())
+    while t!=0:
+        t-=1
+        a=input()
+        if a==a[::-1]:
+
+            print(1)
+        else:
+            print(0)
+               
+                
+
+        
+
+    
+    return 0
+
+if __name__ == '__main__':
+    main()
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
