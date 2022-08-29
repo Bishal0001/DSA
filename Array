@@ -743,3 +743,262 @@ if __name__ == '__main__':
     
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q10. Maximum positivity
+
+Problem Description
+Given an array of integers A, of size N.
+
+Return the maximum size subarray of A having only non-negative elements. If there are more than one such subarray, return the one having the smallest starting index in A.
+
+NOTE: It is guaranteed that an answer always exists.
+
+
+
+Problem Constraints
+1 <= N <= 105
+
+-109 <= A[i] <= 109
+
+
+
+Input Format
+The first and only argument given is the integer array A.
+
+
+
+Output Format
+Return maximum size subarray of A having only non-negative elements. If there are more than one such subarrays, return the one having earliest starting index in A.
+
+
+
+Example Input
+Input 1:
+
+ A = [5, 6, -1, 7, 8]
+Input 2:
+
+ A = [1, 2, 3, 4, 5, 6]
+
+
+Example Output
+Output 1:
+
+ [5, 6]
+Output 2:
+
+ [1, 2, 3, 4, 5, 6]
+
+
+Example Explanation
+Explanation 1:
+
+ There are two subarrays of size 2 having only non-negative elements.
+ 1. [5, 6]  starting point  = 0
+ 2. [7, 8]  starting point  = 3
+ As starting point of 1 is smaller, return [5, 6]
+Explanation 2:
+
+ There is only one subarray of size 6 having only non-negative elements:
+ [1, 2, 3, 4, 5, 6]
+
+
+
+
+Sol:
+class Solution:
+    # @param A : list of integers
+    # @return a list of integers
+    def solve(self, A):
+        n=len(A)
+        l=[]
+        for i in range(n):
+            if A[i] >= 0:
+                for j in range(i,n+1):
+
+                    if j < n and A[j] < 0 :
+                        break
+                    #print(j)
+                l.append ((A[i:j]))
+        #print(l)
+        o=[]
+        for i in l:
+            if len(o) < len(i):
+                o=i
+        return(o)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q11. Length of longest consecutive ones
+
+Given a binary string A. It is allowed to do at most one swap between any 0 and 1. Find and return the length of the longest consecutive 1’s that can be achieved.
+
+
+Input Format
+
+The only argument given is string A.
+Output Format
+
+Return the length of the longest consecutive 1’s that can be achieved.
+Constraints
+
+1 <= length of string <= 1000000
+A contains only characters 0 and 1.
+For Example
+
+Input 1:
+    A = "111000"
+Output 1:
+    3
+
+Input 2:
+    A = "111011101"
+Output 2:
+    7
+
+
+
+
+Sol:
+class Solution:
+    # @param A : string
+    # @return an integer
+    def solve(self, A):
+        n=len(A)
+        maxx=0
+        left=[0]*n
+        right=[0]*n
+        summ=0
+        for i in range(n):
+            if A[i]=='1':
+                summ+=1
+                if i==0:
+                    left[i]=1
+                else:
+                    left[i]=left[i-1]+1
+            maxx=max(maxx,left[i])
+        for i in reversed(range(n)):
+            if A[i]=='1':
+                if i==n-1:
+                    right[i]=1
+                else:
+                    right[i]=right[i+1]+1
+            maxx=max(maxx,right[i])
+        for i in range(1,n-1):
+            if A[i]=='0':
+                temp=left[i-1]+right[i+1]
+                if temp<summ:
+                    temp=temp+1
+                maxx=max(maxx,temp)
+        return maxx
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q12. Christmas Trees
+
+Problem Description
+You are given an array A consisting of heights of Christmas trees and an array B of the same size consisting of the cost of each of the trees (Bi is the cost of tree Ai, where 1 ≤ i ≤ size(A)), and you are supposed to choose 3 trees (let's say, indices p, q, and r), such that Ap < Aq < Ar, where p < q < r.
+The cost of these trees is Bp + Bq + Br.
+
+You are to choose 3 trees such that their total cost is minimum. Return that cost.
+
+If it is not possible to choose 3 such trees return -1.
+
+
+
+Problem Constraints
+1 <= A[i], B[i] <= 109
+3 <= size(A) = size(B) <= 3000
+
+
+
+Input Format
+First argument is an integer array A.
+Second argument is an integer array B.
+
+
+
+Output Format
+Return an integer denoting the minimum cost of choosing 3 trees whose heights are strictly in increasing order, if not possible, -1.
+
+
+
+Example Input
+Input 1:
+
+ A = [1, 3, 5]
+ B = [1, 2, 3]
+Input 2:
+
+ A = [1, 6, 4, 2, 6, 9]
+ B = [2, 5, 7, 3, 2, 7]
+
+
+Example Output
+Output 1:
+
+ 6 
+Output 2:
+
+ 7 
+
+
+Example Explanation
+Explanation 1:
+
+ We can choose the trees with indices 1, 2 and 3, and the cost is 1 + 2 + 3 = 6. 
+Explanation 2:
+
+ We can choose the trees with indices 1, 4 and 5, and the cost is 2 + 3 + 2 = 7. 
+ This is the minimum cost that we can get.
+
+
+
+
+Sol:
+class Solution:
+    # @param A : list of integers
+    # @param B : list of integers
+    # @return an integer
+    def solve(self, A, B):
+        n=len(A)
+        ans=float('inf')
+
+        for t2 in range(n):
+            t2A=A[t2]
+            t2B=B[t2]
+            
+            t1B=float('inf')
+            for i in range(t2):
+                if A[i]<t2A:
+                    t1B=min(t1B,B[i])
+            t3B=float('inf')
+            for i in range(t2+1,n):
+                if A[i]>t2A:
+                    t3B=min(t3B,B[i])
+            if t1B != float("inf") and t2B != float('inf'):
+                cost = t1B+t2B+t3B
+                ans=min(cost,ans)
+        if ans == float('inf'):
+            return -1
+            #print(t1B,t2B,t2B)
+        #print(t1A,t2A,t3A)
+        return(ans)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
